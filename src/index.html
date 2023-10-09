@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <title>Задачи</title>
+</head>
+<body>
+    <div class="container">
+        <div class="add-ticket">
+            <button class="add-button add" id="add-task">Добавить задачу</button>
+        </div>
+        <div class="wrapper-tasks">
+            <div class="tasks" id="tasks"></div>
+        </div>
+        <div class="modal" id="add-task-modal">
+            <div class="modal-add-task">
+                <h2 class="title"></h2>
+                <form>
+                    <div class="box-input">
+                        <label for="short-task-description">Краткое описание</label>
+                        <input type="text" id="short-task-description" class="input" placeholder="Краткое описание">
+                    </div>
+                    <div class="box-textarea">
+                        <label for="full-task-description">Подробное описание</label>
+                        <textarea class="textarea" id="full-task-description"></textarea>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn fail" id="task-reset">Отмена</button>
+                        <button class="btn ok" id="task-submit">Ок</button>
+                    </div>
+                    <input type="hidden" id="task-id" value=""/>
+                </form>
+            </div>
+        </div>
+        <!-- модальное окно на удаление -->
+        <div class="modal" id="delete-task-modal">
+            <div class="modal-delet-task">
+                <h2 class="title">Удалить задачу?</h2>
+                <p>Вы уверены, что хотите удалить задачу? Это действие необратимо</p>
+                <div class="buttons">
+                    <button class="btn fail" id="task-delete-reset">Отмена</button>
+                    <button class="btn ok" id="task-delete-confirm">Ок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
