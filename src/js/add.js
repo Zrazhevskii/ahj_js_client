@@ -11,7 +11,6 @@ const addTaskButton = document.getElementById("add-task"),
   submitButton = document.getElementById("task-submit"),
   container = document.getElementById("tasks");
 
-
 addTaskButton.addEventListener("click", function () {
   modalTitle.textContent = "Добавить задачу?";
   resetFields();
@@ -52,7 +51,7 @@ container.addEventListener("click", function (event) {
   }
   if (event.target.classList.contains("status")) {
     let taskId = event.target.getAttribute("data-task");
-    tasks.uploadStatus(taskId)
+    tasks.uploadStatus(taskId);
   }
 });
 

@@ -1,10 +1,8 @@
 const server = require("./server.js").default;
 const container = document.getElementById("tasks");
-var waitFlag = false;
 const tasks = {
   updateTasks: async () => {
-    await server.getTasks()
-    .then((tasks) => {
+    await server.getTasks().then((tasks) => {
       container.innerHTML = "";
       tasks.forEach((item) => {
         let status = item.status ? `✔` : "";
@@ -22,25 +20,22 @@ const tasks = {
     });
   },
   addTask: (data) => {
-    server.addTask(data)
-    .then(() => {
+    server.addTask(data).then(() => {
       tasks.updateTasks();
     });
   },
   removeTask: async (id) => {
-   server.removeTask(id)
-    .then(() => {
+    server.removeTask(id).then(() => {
       tasks.updateTasks();
     });
   },
   getTask: (id) => {
     return server.getTask(id);
   },
-  uploadStatus: (id) => { 
-    server.uploadStatus(id)
-      .then(() => {
-        tasks.updateTasks();
-      });
+  uploadStatus: (id) => {
+    server.uploadStatus(id).then(() => {
+      tasks.updateTasks();
+    });
   },
 };
 

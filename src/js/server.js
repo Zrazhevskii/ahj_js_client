@@ -19,7 +19,6 @@ const server = {
 };
 
 async function sendRequest(path, data = {}) {
-  
   let options = { method: "GET" };
   if (Object.keys(data).length !== 0) {
     options = {
